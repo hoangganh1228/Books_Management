@@ -1,32 +1,43 @@
 <?php
     session_start();
     require_once('config.php');
-    require_once('./includes/connect.php');
+    require_once('./models/connect.php');
     
-    require_once('./includes/functions.php');
-    require_once('./includes/database.php');
-    require_once('./includes/session.php');
+    require_once('./models/functions.php');
+    require_once('./models/database.php');
+    require_once('./models/session.php');
 
-    $module = _MODULE;
-    $action = _ACTION;
+    require_once('./controllers/add.controller.php');
+    require_once('./controllers/delete.controller.php');
+    require_once('./controllers/edit.controller.php');
+    require_once('./controllers/search.controller.php');
 
-    if(!empty($_GET['module'])) {
     
-        if(is_string( $_GET['module'])) {
-            $module = trim($_GET['module']);
-        }
-    } 
 
-    if(!empty($_GET['action'])) {
-    
-        if(is_string( $_GET['action'])) {
-            $action = trim($_GET['action']);
-        }
-    } 
-
-
-    $path = 'modules/'. $module. '/'. $action . '.php';
-    if(file_exists($path)) {
-        require_once ($path);
+    if(isset($_GET['action'])) {
+        $action = $_GET['action'];
+    } else {
+        $action = '';
     }
+    $path = 'views/books/';
+    switch ($action) {
+        case 'add':
+            require_once($path.'add.php');
+            break;
+        case 'delete':
+            require_once($path.'delete.php');
+            break;
+        case 'edit':
+            require_once($path.'edit.php');
+            break;
+        case 'search':
+            require_once($path.'search.php');
+            break;
+        default:
+            require_once($path.'list.php');
+            break;
+    }
+
+
+    
 ?>

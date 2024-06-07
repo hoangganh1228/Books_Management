@@ -11,15 +11,13 @@
 
 <div class="container">
     <hr>    
-    <h2>Quản lý sách</h2>
-
+    <h2><a href="?action=list" class="fix_font">Quản lí sách</a></h2>
     <div class="container_css">
         <p>
-            <a href="?module=books&action=add" class="btn btn-success btn-sm"> Thêm sách <i class="fa-solid fa-plus"></i></a>
+            <a href="?action=add" class="btn btn-success btn-sm"> Thêm sách <i class="fa-solid fa-plus"></i></a>
         </p>
         <div class="col-md-6">
                 <form method="GET" action="">
-                    <input type="hidden" name="module" value="books">
                     <input type="hidden" name="action" value="search">
                     <div class="input-group">   
                             <input type="text" class="form-control" placeholder="Tìm kiếm theo tên sách, tác giả,..." name="keyword">
@@ -55,8 +53,8 @@
                     <td><?php echo $item['publish']?></td>
                     <td><?php echo $item['genre']?></td>
                     <td><?php echo $item['price']?></td>
-                    <td> <a href="<?php echo _WEB_HOST;?> ?module=books&action=edit&id=<?php echo $item['id']?>" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a></td>
-                    <td> <a href="<?php echo _WEB_HOST;?> ?module=books&action=delete&id=<?php echo $item['id']?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a></td>
+                    <td> <a href="<?php echo _WEB_HOST;?> ?action=edit&id=<?php echo $item['id']?>" class="btn btn-warning btn-sm"><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td> <a href="<?php echo _WEB_HOST;?> ?action=delete&id=<?php echo $item['id']?>" onclick="return confirm('Bạn có chắc chắn muốn xóa không?')" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></a></td>
                 </tr>
             <?php
                     endforeach;

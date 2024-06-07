@@ -1,17 +1,18 @@
 <?php
+    layouts('header');
     $filterAll = filter();
     if(!empty($filterAll['id'])) {
         $bookId = $filterAll['id'];
-        echo $bookId;
+        // echo $bookId;
         $bookDetail = oneRaw("SELECT * FROM sach WHERE id='$bookId'");
         // echo '<pre>';
         // echo print_r($bookDetail);
         // echo '</pre>';
         if(!empty($bookDetail)) {
-           setFlashData('book-detail', $bookDetail);
-           
+            setFlashData('book-detail', $bookDetail);
+        
         } else {
-            redirect('?module=books&action=list');
+            redirect('?action=list');
         }
 
     }
@@ -36,15 +37,14 @@
             setFlashData('smg_type', 'danger');
             
         }
-        redirect('?module=books&action=list');
+        redirect('?action=list');
     } else {
         setFlashData('smg', 'Vui lòng kiểm tra lại dữ liệu!');
         setFlashData('smg_type', 'danger');
         setFlashData('old', $filterAll);
-        // redirect('?module=books&action=list');
+        // redirect('action=list');
     }
     
-    layouts('header');
     
     $smg = getFlashData('smg');
     $smg_type = getFlashData('smg_type');
@@ -88,7 +88,7 @@
 
             <div>
                 <button type="submit" class="btn btn-primary btn-block mg-btn">Chỉnh sửa thông tin sách</button>
-                <a href="?module=books&action=list" class="btn btn-success btn-block mg-btn">Quay lại</a>
+                <a href="?action=list" class="btn btn-success btn-block mg-btn">Quay lại</a>
             </div>
 
         </form>

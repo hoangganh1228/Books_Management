@@ -1,25 +1,6 @@
 <?php
     layouts('header');
-
-    if(isPost()) {
-        $filterAll = filter();
-        $dataInsert = [
-            'nameb' => $filterAll['nameb'],
-            'author' => $filterAll['author'],
-            'publish' => $filterAll['publish'],
-            'nameb' => $filterAll['nameb'],
-            'genre' => $filterAll['genre'],
-            'price' => $filterAll['price'],
-        ];
-
-    $insertStatus = insert('sach', $dataInsert);
-
-    if($insertStatus) {
-        redirect('?module=books&action=list');
-    } else {
-        redirect('?module=books&action=add');
-    }
-    }
+    add();
 ?>
 
 
@@ -54,7 +35,7 @@
 
             <div>
                 <button type="submit" class="btn btn-primary btn-block mg-btn">Thêm sách</button>
-                <a href="?module=books&action=list" class="btn btn-success btn-block mg-btn">Quay lại</a>
+                <a href="?action=list" class="btn btn-success btn-block mg-btn">Quay lại</a>
             </div>
 
         </form>
