@@ -22,7 +22,7 @@
                     <div class="input-group">   
                             <input type="text" class="form-control" placeholder="Tìm kiếm theo tên sách, tác giả,..." name="keyword">
                         <div class="input-group-append">
-                            <input class="btn btn-outline-secondary" type="submit">
+                            <input class="btn btn-outline-secondary" type="submit" value="Tìm kiếm">
                         </div>
                     </div>
                 </form>

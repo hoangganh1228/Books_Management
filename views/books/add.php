@@ -23,9 +23,8 @@
                 <input type="text" name="publish" class="form-control" placeholder="Nhập năm phát hành">
             </div>
             <div class="form-group mb-3">
-                <label for="" class="mb-2">Thể loại</label>
+                <label for="" class="mb-2 d-block">Thể loại</label>
                 <input type="text" name="genre" class="form-control" placeholder="Nhập thể loại sách">
-                
             </div>
             <div class="form-group mb-3">
                 <label for="" class="mb-2">Nhập giá</label>
