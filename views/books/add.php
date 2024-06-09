@@ -1,6 +1,5 @@
 <?php
     layouts('header');
-    add();
 ?>
 
 

@@ -3,15 +3,13 @@
     require_once('config.php');
     require_once('./models/connect.php');
     
+    // Model
     require_once('./models/functions.php');
     require_once('./models/database.php');
     require_once('./models/session.php');
 
-    require_once('./controllers/add.controller.php');
-    require_once('./controllers/delete.controller.php');
-    require_once('./controllers/edit.controller.php');
-    require_once('./controllers/search.controller.php');
-
+    // Controller
+    require_once('./controllers/list.controller.php');
     
 
     if(isset($_GET['action'])) {

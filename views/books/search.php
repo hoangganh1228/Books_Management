@@ -1,27 +1,4 @@
 <?php
-    $keyword = '';  
-    if(isGet()) {
-        $filterAll = filter();
-        // echo '<pre>';
-        // print_r($filterAll);
-        // echo '</pre>';
-        if(!empty($filterAll['keyword'])) {
-            
-            $keyword = $filterAll['keyword'];
-            if(!empty($keyword)) {
-                // echo $keyword;
-                $dataSearch = getRaw("SELECT * FROM sach WHERE nameb REGEXP '$keyword' OR author REGEXP '$keyword' OR publish REGEXP '$keyword'  ORDER BY id DESC");
-                // echo '<pre>';
-                // print_r($dataSearch);
-                // echo '</pre>';
-            } else {
-                redirect('?action=list');
-            }
-        }
-    }
-    if(empty($keyword)) {
-        redirect('?action=list');
-    }
     layouts('header');
 ?>
 
